@@ -1,0 +1,18 @@
+.user-panel{
+    width: 250px;
+    display: grid;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+#reg{
+    display: grid;
+}
+
+#log{
+    display: none;
+}
+
+.logoutTxt{
+    text-align: center;
+}
