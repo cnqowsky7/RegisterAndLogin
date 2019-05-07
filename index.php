@@ -86,7 +86,7 @@ if(isset($_POST) & !empty($_POST)){
                     <li id="user" class="nav-item">
                         <a href="#" class="nav-link">User</a>
                     </li>
-                    <li class="nav-item" style="float="right";>
+                    <li class="nav-item" style="float="right" onclick="changePassword()">
                         <a href="#" class="nav-link">Change Password</a>
                     </li>
                     <li class="nav-item" style="float="right";>
@@ -95,31 +95,32 @@ if(isset($_POST) & !empty($_POST)){
                 </ul>
             </div>
                 ';
-            } 
+            }
             
             ?>
         </nav>
 
-        <?php
-        if($test == ''){echo' 
-        <form class="user-panel" id="reg" method="post">'; } ?>
+        <form class="user-panel" id="reg" method="post">
         <?php if(isset($smsg)){ ?><div class="alert alert-success" role="alert"> <?php echo $smsg; ?> </div><?php } ?>
         <?php if(isset($fmsg)){ ?><div class="alert alert-danger" role="alert"> <?php echo $fmsg; ?> </div><?php } ?>
-        <?php 
-        if($test == ''){echo'
+
             <input type="text" name="username" placeholder="Username" required>
             <input type="email" name="email" placeholder="Email Addres" required>
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Register</button>
         </form>
 
-        <form class="user-panel" id="log" action="" method="post">
+        <form class="user-panel" id="log" action="" method="post" onsubmit="clear()">
             <input type="text" name="usernameLogin" placeholder="Username or Email Addres" required>
             <input type="password" name="passwordLogin" placeholder="Password" required>
-            <button type="submit">Login</button>
-        </form>';
-        }
-    ?>
+            <button type="submit">Loginn</button>
+        </form>
+        
+        <form class="user-panel" id="changePassword" action="" method="post">
+            <input type="password" name="oldPasswordChange" placeholder="Old Password" required>
+            <input type="password" name="newPasswordChange" placeholder="New Password" required>
+            <button type="submit">Change Password</button>
+        </form>
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

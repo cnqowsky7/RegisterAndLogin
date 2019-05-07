@@ -13,6 +13,10 @@
     display: none;
 }
 
+#changePassword{
+    display: none;
+}
+
 .logoutTxt{
     text-align: center;
 }
